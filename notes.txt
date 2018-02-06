@@ -1,0 +1,15 @@
+return cls(blog_id=post_data['blog_id'],
+                   title=post_data['title'],
+                   content=post_data['content'],
+                   author=post_data['author'],
+                   created_date=post_data['created_date'],
+                   _id=post_data['_id']
+
+            )
+
+return cls(author=blog_data['author'],
+                    title=blog_data['title'],
+                    description=blog_data['description'],
+                    _id=blog_data['_id'])
+
+print([i for i in list])
