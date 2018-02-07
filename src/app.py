@@ -11,13 +11,13 @@ list = [1,2,3,4,5,'poop']
 
 
 @app.route('/') # www.mysite.com/api/
+def hello_world():
+    return ("Hello, world!")
+'''
 def index():
     return render_template('base.html', pages=list)
+'''
 
-'''
-    def hello_world():
-        return("Hello, world!")
-'''
 
 if __name__ == '__main__':
     app.run(port=5000)
