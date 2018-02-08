@@ -1,5 +1,6 @@
 import uuid
 
+import datetime
 from flask import session
 
 from src.common.database import Database
@@ -57,6 +58,20 @@ class User(object):
 
     def get_blogs(self):
         return Blog.find_by_author_id(self._id)
+
+    def new_blog(self, title, description):
+        blog = Blog(author=self.email,
+                    title=title,
+                    description=description,
+                    author_id=self._id)
+        blog.save_to_mongo()
+
+    @staticmethod
+    def new_post(blog_id, title, content, date=datetime.datetime.utcnow()):
+        blog = Blog.from_mongo(blog_id)
+        blog.new_post(title=title,
+                      content=content,
+                      date=date)
 
     def json(self):
         return {

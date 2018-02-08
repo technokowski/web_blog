@@ -37,7 +37,6 @@ class Blog(object):
             'title': self.title,
             'description': self.description,
             '_id': self._id
-
         }
 
     @classmethod

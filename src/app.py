@@ -6,21 +6,14 @@ __author__ = "technokowski"
 from flask import Flask, render_template
 
 app = Flask(__name__) #__main__
-
-list = [1,2,3,4,5,'poop']
-
+app.debug = True
 
 @app.route('/') # www.mysite.com/api/
-def hello_world():
-    return ("Hello, world!")
-'''
-def index():
-    return render_template('base.html', pages=list)
-'''
-
+def hello_message():
+    return render_template('base.html')
 
 if __name__ == '__main__':
-    app.run(port=5000)
+    app.run(port=4995)
 
 
 
