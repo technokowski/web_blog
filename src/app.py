@@ -14,7 +14,7 @@ app.debug = True
 def hello_message():
     return render_template('login.html')
 
-@app.route('/login'):
+@app.route('/login')
 def login_user():
     email = request.form['email']
     password = request.form['password']
